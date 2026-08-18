@@ -54,7 +54,7 @@ export default function Header() {
                 
                 {/* Logo Section - replaced with local transparent logo image */}
                 <Link href="/" className="flex items-center group select-none shrink-0 hover:opacity-90 transition py-0.5">
-                    <img src="/images/logo-bagile.png" alt="B-AGILE Logo" className="h-10 md:h-12 w-auto select-none pointer-events-none object-contain" />
+                    <img src="/images/logo-bagile.png" alt="B-AGILE Logo" className="h-14 md:h-16 w-auto select-none pointer-events-none object-contain" />
                 </Link>
 
                 {/* Desktop Navigation Links - matching purple highlights */}
