@@ -5,7 +5,7 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm, router } from '@inertiajs/react';
-import { Eye, EyeOff, User, Mail, Lock } from 'lucide-react';
+import { Eye, EyeOff, User, Mail, Lock, Briefcase, ShieldCheck } from 'lucide-react';
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -49,7 +49,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             )}
 
-            {/* Section Connexion Rapide - Glassmorphism */}
+            {/* Section Connexion Rapide - Glassmorphism, No Emojis */}
             <div className="mb-6 bg-purple-950/40 rounded-2xl p-4 border border-purple-800/30 shadow-inner">
                 <span className="block text-[10px] font-black text-purple-300 uppercase tracking-widest mb-3 text-center">
                     Connexion Rapide (Mode Démo)
@@ -60,7 +60,7 @@ export default function Login({ status, canResetPassword }) {
                         onClick={() => handleQuickLogin('Jean Client', 'client@bagile.com')}
                         className="flex flex-col items-center justify-center p-3 bg-purple-900/10 hover:bg-purple-900/25 border border-purple-800/40 hover:border-purple-500/40 rounded-xl transition duration-300 text-center shadow-md group"
                     >
-                        <span className="text-xl mb-1 group-hover:scale-110 transition duration-300">👤</span>
+                        <User className="text-purple-300 group-hover:text-purple-400 mb-1.5 transition duration-300" size={18} />
                         <span className="text-[11px] font-bold text-white tracking-wide">Espace Client</span>
                         <span className="text-[9px] text-purple-300/70 font-mono mt-0.5">client@bagile.com</span>
                     </button>
@@ -69,7 +69,7 @@ export default function Login({ status, canResetPassword }) {
                         onClick={() => handleQuickLogin('Sophie Admin (B-AGILE)', 'team@bagile.com')}
                         className="flex flex-col items-center justify-center p-3 bg-purple-900/10 hover:bg-purple-900/25 border border-purple-800/40 hover:border-purple-500/40 rounded-xl transition duration-300 text-center shadow-md group"
                     >
-                        <span className="text-xl mb-1 group-hover:scale-110 transition duration-300">💼</span>
+                        <Briefcase className="text-purple-300 group-hover:text-purple-400 mb-1.5 transition duration-300" size={18} />
                         <span className="text-[11px] font-bold text-white tracking-wide">Espace Équipe</span>
                         <span className="text-[9px] text-purple-300/70 font-mono mt-0.5">team@bagile.com</span>
                     </button>
@@ -95,7 +95,7 @@ export default function Login({ status, canResetPassword }) {
                             type="text"
                             name="name"
                             value={data.name}
-                            className="block w-full pl-10 !bg-purple-950/40 !border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring !focus:ring-purple-500/10 transition duration-200 text-sm py-2"
+                            className="block w-full pl-10 !bg-purple-950/50 !border-purple-900/60 hover:!border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring-4 !focus:ring-purple-500/15 transition duration-200 text-sm py-2"
                             autoComplete="name"
                             isFocused={true}
                             onChange={(e) => setData('name', e.target.value)}
@@ -118,7 +118,7 @@ export default function Login({ status, canResetPassword }) {
                             type="email"
                             name="email"
                             value={data.email}
-                            className="block w-full pl-10 !bg-purple-950/40 !border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring !focus:ring-purple-500/10 transition duration-200 text-sm py-2"
+                            className="block w-full pl-10 !bg-purple-950/50 !border-purple-900/60 hover:!border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring-4 !focus:ring-purple-500/15 transition duration-200 text-sm py-2"
                             autoComplete="username"
                             onChange={(e) => setData('email', e.target.value)}
                             placeholder="votre@email.com"
@@ -140,7 +140,7 @@ export default function Login({ status, canResetPassword }) {
                             type={showPassword ? 'text' : 'password'}
                             name="password"
                             value={data.password}
-                            className="block w-full pl-10 pr-10 !bg-purple-950/40 !border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring !focus:ring-purple-500/10 transition duration-200 text-sm py-2"
+                            className="block w-full pl-10 pr-10 !bg-purple-950/50 !border-purple-900/60 hover:!border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring-4 !focus:ring-purple-500/15 transition duration-200 text-sm py-2"
                             autoComplete="current-password"
                             onChange={(e) => setData('password', e.target.value)}
                             placeholder="••••••••"
@@ -160,12 +160,12 @@ export default function Login({ status, canResetPassword }) {
 
                 {/* Se souvenir de moi & Oublié */}
                 <div className="flex items-center justify-between pt-1">
-                    <label className="flex items-center select-none">
+                    <label className="flex items-center select-none cursor-pointer">
                         <Checkbox
                             name="remember"
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
-                            className="border-purple-800/50 bg-purple-950/40 text-purple-600 focus:ring-purple-500/20"
+                            className="!border-purple-800/50 !bg-purple-950/40 !text-purple-600 !focus:ring-purple-500/20 rounded cursor-pointer"
                         />
                         <span className="ms-2 text-[10px] font-bold text-purple-200/70 uppercase tracking-wider">
                             Se souvenir de moi
@@ -212,6 +212,23 @@ export default function Login({ status, canResetPassword }) {
                 </svg>
                 Se connecter avec Google
             </a>
+
+            {/* Inscription redirect link */}
+            <div className="mt-6 text-center select-none text-xs text-purple-200/50">
+                Nouveau sur B-AGILE ?{' '}
+                <Link
+                    href="/register"
+                    className="font-bold text-purple-400 hover:text-white underline transition duration-200 ml-0.5"
+                >
+                    Créer un compte
+                </Link>
+            </div>
+
+            {/* SSL secure badge */}
+            <div className="mt-6 pt-4 border-t border-purple-900/30 flex items-center justify-center gap-1.5 text-[9px] font-black tracking-wider text-purple-300/40 uppercase select-none">
+                <ShieldCheck size={12} className="text-purple-400/40" />
+                Connexion sécurisée SSL 256-bits
+            </div>
         </GuestLayout>
     );
 }
