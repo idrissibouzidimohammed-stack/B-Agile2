@@ -50,7 +50,7 @@ export default function Header() {
     return (
         <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6">
             {/* Main Capsule Nav - styled with purple theme to match the brand logo */}
-            <nav className="max-w-4xl mx-auto bg-purple-950/80 border border-purple-800/60 backdrop-blur-md rounded-full px-6 py-0.5 flex items-center justify-between shadow-[0_10px_35px_rgba(45,10,80,0.5)] relative overflow-hidden">
+            <nav className="max-w-6xl mx-auto bg-purple-950/80 border border-purple-800/60 backdrop-blur-md rounded-full px-6 py-0.5 flex items-center justify-between shadow-[0_10px_35px_rgba(45,10,80,0.5)] relative overflow-hidden">
                 
                 {/* Logo Section - replaced with local transparent logo image */}
                 <Link href="/" className="flex items-center group select-none shrink-0 hover:opacity-90 transition py-0.5">
