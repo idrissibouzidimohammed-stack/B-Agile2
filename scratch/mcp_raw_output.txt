@@ -1,0 +1,1 @@
+Video job 3246acc1-c2f3-4a29-b0f2-5292d9a1b8e3 is generating (status: queued). The widget updates live — no need to poll.

@@ -1,0 +1,35 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Video job 3246acc1-c2f3-4a29-b0f2-5292d9a1b8e3 is paused — out of Motion credits. Open show_plans_and_credits so the user can top up, then continue the job with create_followup (job_id 3246acc1-c2f3-4a29-b0f2-5292d9a1b8e3)."
+    }
+  ],
+  "structuredContent": {
+    "generation": {
+      "id": "3246acc1-c2f3-4a29-b0f2-5292d9a1b8e3",
+      "type": "video",
+      "status": "awaiting_user_input",
+      "chat_url": "https://motion.so/agent?chat=3246acc1-c2f3-4a29-b0f2-5292d9a1b8e3",
+      "pending_user_input": true,
+      "insufficient_credits": true,
+      "progress_percent": 10,
+      "prompt": null,
+      "aspect_ratio": null,
+      "duration": null,
+      "design_system_id": null,
+      "created_at": "2026-08-18T16:46:58.414433+00:00",
+      "updated_at": "2026-08-18T16:49:52.492191+00:00",
+      "completed_at": "2026-08-18T16:49:52.136+00:00",
+      "error": null,
+      "output": null
+    },
+    "poll_after_seconds": 8,
+    "status_url": "https://api.motion.so/api/motion/sessions/3246acc1-c2f3-4a29-b0f2-5292d9a1b8e3",
+    "recovery_tool": "show_plans_and_credits",
+    "recovery_tool_args": {
+      "intent": "topup"
+    },
+    "billing_url": "https://motion.so/billing"
+  }
+}
