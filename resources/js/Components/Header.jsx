@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Sun, Search, Globe, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { LayoutGrid, PackageSearch, Truck, UsersRound, Settings2, Store, ShoppingBag, GraduationCap } from 'lucide-react';
 
 export default function Header() {
@@ -39,11 +39,11 @@ export default function Header() {
     return (
         <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6">
             {/* Main Capsule Nav - styled with purple theme to match the brand logo */}
-            <nav className="max-w-6xl mx-auto bg-purple-950/80 border border-purple-800/60 backdrop-blur-md rounded-full px-6 py-2.5 flex items-center justify-between shadow-[0_10px_35px_rgba(45,10,80,0.5)]">
+            <nav className="max-w-6xl mx-auto bg-purple-950/80 border border-purple-800/60 backdrop-blur-md rounded-full px-6 py-1.5 flex items-center justify-between shadow-[0_10px_35px_rgba(45,10,80,0.5)]">
                 
                 {/* Logo Section - replaced with local transparent logo image */}
-                <Link href="/" className="flex items-center group select-none shrink-0 hover:opacity-90 transition">
-                    <img src="/images/logo-bagile.png" alt="B-AGILE Logo" className="h-8 w-auto select-none pointer-events-none" />
+                <Link href="/" className="flex items-center group select-none shrink-0 hover:opacity-90 transition py-0.5">
+                    <img src="/images/logo-bagile.png" alt="B-AGILE Logo" className="h-10 md:h-12 w-auto select-none pointer-events-none object-contain" />
                 </Link>
 
                 {/* Desktop Navigation Links - matching purple highlights */}
@@ -131,34 +131,18 @@ export default function Header() {
 
                 {/* Right Side Icons & Actions */}
                 <div className="flex items-center gap-4">
-                    {/* Light/Dark Toggle */}
-                    <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 border border-purple-800 bg-purple-900/30 hover:bg-purple-900/60 text-[9px] font-black uppercase tracking-widest text-purple-200 rounded-lg transition duration-200 select-none">
-                        <Sun size={11} className="text-yellow-400" />
-                        LIGHT
-                    </button>
-
-                    {/* Search Icon */}
-                    <button className="text-purple-300 hover:text-white transition duration-200 shrink-0">
-                        <Search size={14} />
-                    </button>
-
-                    {/* Language Switcher */}
-                    <button className="text-purple-300 hover:text-white transition duration-200 shrink-0">
-                        <Globe size={14} />
-                    </button>
-
                     {/* Call To Action (White/Purple Capsule) */}
                     {auth?.user ? (
                         <Link
                             href="/dashboard"
-                            className="bg-white hover:bg-purple-100 text-purple-950 text-[10px] font-black px-4 py-1.5 rounded-full transition duration-300 uppercase tracking-widest shrink-0 shadow-lg"
+                            className="bg-white hover:bg-purple-100 text-purple-950 text-[10px] font-black px-5 py-2 rounded-full transition duration-300 uppercase tracking-widest shrink-0 shadow-lg"
                         >
                             ESPACE
                         </Link>
                     ) : (
                         <Link
                             href="/login"
-                            className="bg-white hover:bg-purple-100 text-purple-950 text-[10px] font-black px-4 py-1.5 rounded-full transition duration-300 uppercase tracking-widest shrink-0 shadow-lg"
+                            className="bg-white hover:bg-purple-100 text-purple-950 text-[10px] font-black px-5 py-2 rounded-full transition duration-300 uppercase tracking-widest shrink-0 shadow-lg"
                         >
                             CONNEXION
                         </Link>
