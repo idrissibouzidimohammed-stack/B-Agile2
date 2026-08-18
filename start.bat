@@ -7,13 +7,13 @@ echo.
 
 :: Vérification si le dossier vendor existe
 if not exist "vendor" (
-    echo [INFO] Installation des dependances PHP (composer install)...
+    echo [INFO] Installation des dependances PHP - composer install...
     call composer install
 )
 
 :: Vérification si le dossier node_modules existe
 if not exist "node_modules" (
-    echo [INFO] Installation des dependances JS (npm install)...
+    echo [INFO] Installation des dependances JS - npm install...
     call npm install
 )
 
