@@ -38,24 +38,21 @@ export default function Header() {
 
     return (
         <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6">
-            {/* Main Capsule Nav */}
-            <nav className="max-w-6xl mx-auto bg-slate-950/80 border border-slate-900/60 backdrop-blur-md rounded-full px-6 py-2.5 flex items-center justify-between shadow-[0_10px_35px_rgba(0,0,0,0.6)]">
+            {/* Main Capsule Nav - styled with purple theme to match the brand logo */}
+            <nav className="max-w-6xl mx-auto bg-purple-950/80 border border-purple-800/60 backdrop-blur-md rounded-full px-6 py-2.5 flex items-center justify-between shadow-[0_10px_35px_rgba(45,10,80,0.5)]">
                 
-                {/* Logo Section */}
-                <Link href="/" className="flex items-center gap-2 group select-none shrink-0">
-                    <div className="w-8 h-8 rounded-full bg-blue-950/40 border border-blue-900/60 flex items-center justify-center font-black group-hover:scale-105 transition duration-300">
-                        <span className="text-blue-400 text-xs tracking-tight font-extrabold">BA</span>
-                    </div>
-                    <span className="text-xs font-black tracking-widest text-white uppercase hidden sm:inline-block">B-AGILE</span>
+                {/* Logo Section - replaced with local transparent logo image */}
+                <Link href="/" className="flex items-center group select-none shrink-0 hover:opacity-90 transition">
+                    <img src="/images/logo-bagile.png" alt="B-AGILE Logo" className="h-8 w-auto select-none pointer-events-none" />
                 </Link>
 
-                {/* Desktop Navigation Links */}
-                <ul className="hidden lg:flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
+                {/* Desktop Navigation Links - matching purple highlights */}
+                <ul className="hidden lg:flex items-center gap-1 text-[10px] font-extrabold uppercase tracking-widest text-purple-200/70">
                     {/* Accueil */}
                     <li>
                         <Link
                             href="/"
-                            className={`inline-block transition-all duration-200 rounded-full px-4 py-1.5 ${isActive('/') && url === '/' ? 'bg-slate-900 text-white font-black' : 'hover:text-white'}`}
+                            className={`inline-block transition-all duration-200 rounded-full px-4 py-1.5 ${isActive('/') && url === '/' ? 'bg-purple-900/60 text-white font-black border border-purple-700/40' : 'hover:text-white'}`}
                         >
                             ACCUEIL
                         </Link>
@@ -65,7 +62,7 @@ export default function Header() {
                     <li>
                         <Link
                             href="/a-propos"
-                            className={`inline-block transition-all duration-200 rounded-full px-4 py-1.5 ${isActive('/a-propos') ? 'bg-slate-900 text-white font-black' : 'hover:text-white'}`}
+                            className={`inline-block transition-all duration-200 rounded-full px-4 py-1.5 ${isActive('/a-propos') ? 'bg-purple-900/60 text-white font-black border border-purple-700/40' : 'hover:text-white'}`}
                         >
                             À PROPOS
                         </Link>
@@ -78,7 +75,7 @@ export default function Header() {
                         onMouseLeave={() => setSolutionsOpen(false)}
                     >
                         <button
-                            className={`flex items-center gap-1 transition-all duration-200 rounded-full px-4 py-1.5 ${isActive('/nos-solutions') ? 'bg-slate-900 text-white font-black' : 'hover:text-white'}`}
+                            className={`flex items-center gap-1 transition-all duration-200 rounded-full px-4 py-1.5 ${isActive('/nos-solutions') ? 'bg-purple-900/60 text-white font-black border border-purple-700/40' : 'hover:text-white'}`}
                         >
                             SOLUTIONS
                             <ChevronDown
@@ -94,7 +91,7 @@ export default function Header() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 0.2 }}
-                                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[480px] bg-slate-950/95 border border-slate-800 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-2 backdrop-blur-md"
+                                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[480px] bg-slate-950/95 border border-purple-900/40 rounded-2xl shadow-2xl p-4 grid grid-cols-2 gap-2 backdrop-blur-md"
                                 >
                                     {solutionsList.map((sol) => {
                                         const Icon = sol.icon;
@@ -102,14 +99,14 @@ export default function Header() {
                                             <Link
                                                 key={sol.path}
                                                 href={sol.path}
-                                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-900 transition-colors duration-200 group"
+                                                className="flex items-start gap-3 p-3 rounded-xl hover:bg-purple-950/50 transition-colors duration-200 group"
                                             >
                                                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${sol.color} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                                                     <Icon size={19} strokeWidth={2} />
                                                 </div>
                                                 <div className="text-left">
                                                     <p className="text-xs font-bold text-white uppercase tracking-wider">{sol.name}</p>
-                                                    <p className="text-[10px] text-zinc-400 normal-case font-normal leading-tight mt-0.5">{sol.desc}</p>
+                                                    <p className="text-[10px] text-purple-200/60 normal-case font-normal leading-tight mt-0.5">{sol.desc}</p>
                                                 </div>
                                             </Link>
                                         );
@@ -124,7 +121,7 @@ export default function Header() {
                         <li key={item.path}>
                             <Link
                                 href={item.path}
-                                className={`inline-block transition-all duration-200 rounded-full px-4 py-1.5 ${isActive(item.path) ? 'bg-slate-900 text-white font-black' : 'hover:text-white'}`}
+                                className={`inline-block transition-all duration-200 rounded-full px-4 py-1.5 ${isActive(item.path) ? 'bg-purple-900/60 text-white font-black border border-purple-700/40' : 'hover:text-white'}`}
                             >
                                 {item.name.toUpperCase()}
                             </Link>
@@ -135,44 +132,42 @@ export default function Header() {
                 {/* Right Side Icons & Actions */}
                 <div className="flex items-center gap-4">
                     {/* Light/Dark Toggle */}
-                    <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-[9px] font-black uppercase tracking-widest text-slate-300 rounded-lg transition duration-200 select-none">
+                    <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 border border-purple-800 bg-purple-900/30 hover:bg-purple-900/60 text-[9px] font-black uppercase tracking-widest text-purple-200 rounded-lg transition duration-200 select-none">
                         <Sun size={11} className="text-yellow-400" />
                         LIGHT
                     </button>
 
                     {/* Search Icon */}
-                    <button className="text-slate-400 hover:text-white transition duration-200 shrink-0">
+                    <button className="text-purple-300 hover:text-white transition duration-200 shrink-0">
                         <Search size={14} />
                     </button>
 
                     {/* Language Switcher */}
-                    <button className="text-slate-400 hover:text-white transition duration-200 shrink-0">
+                    <button className="text-purple-300 hover:text-white transition duration-200 shrink-0">
                         <Globe size={14} />
                     </button>
 
-                    {/* Call To Action (White Capsule) */}
+                    {/* Call To Action (White/Purple Capsule) */}
                     {auth?.user ? (
                         <Link
                             href="/dashboard"
-                            className="bg-white hover:bg-slate-100 text-slate-950 text-[10px] font-black px-4 py-1.5 rounded-full transition duration-300 uppercase tracking-widest shrink-0 animate-pulse"
+                            className="bg-white hover:bg-purple-100 text-purple-950 text-[10px] font-black px-4 py-1.5 rounded-full transition duration-300 uppercase tracking-widest shrink-0 shadow-lg"
                         >
                             ESPACE
                         </Link>
                     ) : (
-                        <div className="flex items-center gap-2">
-                            <Link
-                                href="/login"
-                                className="bg-white hover:bg-slate-100 text-slate-950 text-[10px] font-black px-4 py-1.5 rounded-full transition duration-300 uppercase tracking-widest shrink-0"
-                            >
-                                CONNEXION
-                            </Link>
-                        </div>
+                        <Link
+                            href="/login"
+                            className="bg-white hover:bg-purple-100 text-purple-950 text-[10px] font-black px-4 py-1.5 rounded-full transition duration-300 uppercase tracking-widest shrink-0 shadow-lg"
+                        >
+                            CONNEXION
+                        </Link>
                     )}
 
                     {/* Mobile Drawer Trigger */}
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
-                        className="lg:hidden text-slate-400 hover:text-white transition duration-200 shrink-0"
+                        className="lg:hidden text-purple-300 hover:text-white transition duration-200 shrink-0"
                     >
                         {mobileOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
@@ -186,14 +181,14 @@ export default function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="lg:hidden max-w-6xl mx-auto mt-2 bg-slate-950/95 border border-slate-800/80 backdrop-blur-md rounded-2xl p-4 overflow-hidden shadow-2xl"
+                        className="lg:hidden max-w-6xl mx-auto mt-2 bg-purple-950/95 border border-purple-800/80 backdrop-blur-md rounded-2xl p-4 overflow-hidden shadow-2xl"
                     >
-                        <ul className="flex flex-col gap-3 text-xs font-bold uppercase tracking-widest text-slate-400">
+                        <ul className="flex flex-col gap-3 text-xs font-bold uppercase tracking-widest text-purple-200/80">
                             <li>
                                 <Link
                                     href="/"
                                     onClick={() => setMobileOpen(false)}
-                                    className={`block py-2 px-3 rounded-lg ${isActive('/') && url === '/' ? 'bg-slate-900 text-white' : 'hover:text-white'}`}
+                                    className={`block py-2 px-3 rounded-lg ${isActive('/') && url === '/' ? 'bg-purple-900 text-white' : 'hover:text-white'}`}
                                 >
                                     ACCUEIL
                                 </Link>
@@ -202,7 +197,7 @@ export default function Header() {
                                 <Link
                                     href="/a-propos"
                                     onClick={() => setMobileOpen(false)}
-                                    className={`block py-2 px-3 rounded-lg ${isActive('/a-propos') ? 'bg-slate-900 text-white' : 'hover:text-white'}`}
+                                    className={`block py-2 px-3 rounded-lg ${isActive('/a-propos') ? 'bg-purple-900 text-white' : 'hover:text-white'}`}
                                 >
                                     À PROPOS
                                 </Link>
@@ -223,7 +218,7 @@ export default function Header() {
                                     <Link
                                         href={item.path}
                                         onClick={() => setMobileOpen(false)}
-                                        className={`block py-2 px-3 rounded-lg ${isActive(item.path) ? 'bg-slate-900 text-white' : 'hover:text-white'}`}
+                                        className={`block py-2 px-3 rounded-lg ${isActive(item.path) ? 'bg-purple-900 text-white' : 'hover:text-white'}`}
                                     >
                                         {item.name.toUpperCase()}
                                     </Link>
