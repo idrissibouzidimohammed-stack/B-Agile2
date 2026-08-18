@@ -1,58 +1,110 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# B-AGILE – Suite Logicielle Supply Chain & Gestion d'Entreprise
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+B-AGILE est une application web moderne combinant un site vitrine interactif et un portail de gestion de demandes de support (Ticketing) pour nos solutions de Supply Chain. Le projet est construit sur une architecture robuste utilisant **Laravel 13**, **React 18**, **Inertia.js** et **Tailwind CSS**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Fonctionnalités Clés
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Espace Client & Équipe (Support Ticketing)
+- **Espace Client :** Soumission de tickets d'aide classés par catégorie et priorité, suivi en direct avec chat de discussion.
+- **Espace Équipe (Support) :** Console d'administration avec statistiques globales (tickets résolus, en attente, etc.), filtres avancés, modification de statut et clavardage en direct avec le client.
+- **Connexion Rapide (Démo) :** Boutons d'accès en 1 clic pour tester les deux espaces instantanément sur la page `/login`.
+- **Bouton de Basculement :** Option dans le menu utilisateur pour interchanger les profils (Client ↔ Équipe) instantanément.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. Présentation des Solutions B-AGILE
+Le site présente nos 8 modules spécialisés :
+- **ERP** (Enterprise Resource Planning) – Cœur de gestion.
+- **WMS** (Warehouse Management System) – Gestion d'entrepôt avec cartographie 3D.
+- **TMS** (Transport Management System) – Optimisation de tournées.
+- **CRM** (Customer Relationship Management) – Pipeline commercial Kanban.
+- **GMAO** (Maintenance) – Gestion préventive et curative.
+- **POS** (Point of Sale) – Caisse enregistreuse tactile synchronisée.
+- **E-COM** – Portails et boutiques connectés aux stocks.
+- **Éducation** – Offre de formation logistique Supply Chain.
 
-## Learning Laravel
+### 3. Expérience Utilisateur & Fonctionnalités Avancées
+- **Intégration 3D :** Boîte interactive 3D animée (EMS) sur le Hero de la page d'accueil avec Three.js / React Three Fiber.
+- **Connexion Sociale :** Authentification via Google (Laravel Socialite).
+- **Animations fluides :** Transition entre pages et apparitions au défilement grâce à Framer Motion et Intersection Observer (`ScrollReveal`).
+- **Notifications Emails :** Envoi automatique de rapports ou d'emails d'avertissement lors des connexions et des changements de statut.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Stack Technique
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- **Backend :** Laravel 13 (PHP 8.3+) & Laravel Sanctum / Socialite.
+- **Frontend :** React 18, Inertia.js (SPA sans rechargement), Tailwind CSS (Design System moderne).
+- **Compilation :** Vite 8.
+- **Animations & 3D :** React Three Fiber (R3F), Framer Motion, Lucide React (Icônes).
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 📦 Installation et Lancement en Local
 
+### 1. Cloner le projet et entrer dans le dossier
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/idrissibouzidimohammed-stack/B-Agile2.git
+cd B-Agile2
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Installer les dépendances PHP
+```bash
+composer install
+```
 
-## Contributing
+### 3. Installer les dépendances JavaScript
+```bash
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Configurer l'environnement
+Copiez le fichier d'exemple et générez la clé d'application :
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+*Note : Renseignez vos accès de base de données dans le fichier `.env`.*
 
-## Code of Conduct
+### 5. Lancer les migrations et seeders (Comptes de démo)
+Remplissez la base de données avec les comptes de test et des tickets fictifs :
+```bash
+php artisan migrate --seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Lancer les serveurs de développement
+Lancez le compilateur frontend Vite et le serveur PHP :
+```bash
+# Terminal 1 (Frontend Vite)
+npm run dev
 
-## Security Vulnerabilities
+# Terminal 2 (Backend Laravel)
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🔑 Comptes de Test par Défaut
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Rôle | Adresse Email | Mot de passe |
+| :--- | :--- | :--- |
+| **👤 Client** | `client@bagile.com` | `password` |
+| **💼 Support / Équipe** | `team@bagile.com` | `password` |
+
+---
+
+## 📁 Structure du Projet
+
+- `app/Http/Controllers/` : Contrôleurs backend (gestion des demandes, des solutions, et de l'authentification Google/Breeze).
+- `app/Models/` : Modèles Eloquent (`User`, `Demande`, `DemandeResponse`).
+- `database/migrations/` : Structure des tables SQL (utilisateurs, demandes, réponses, tokens).
+- `resources/js/Pages/` : Pages React du site (solutions, contact, partenariat, espaces client/équipe).
+- `resources/js/Components/` : Composants réutilisables (ScrollReveal, Box3D, VideoHero, etc.).
+- `routes/web.php` : Définition de toutes les routes de l'application.
+
+---
+
+## 🌐 Déploiement (Vercel / Railway)
+Le projet est configuré pour être facilement hébergé :
+- Une configuration de serveur est disponible dans `vite.config.js`.
+- Pour un déploiement Vercel serverless, ajoutez un fichier `vercel.json` et un point d'entrée `api/index.php` comme détaillé dans la documentation de déploiement.
