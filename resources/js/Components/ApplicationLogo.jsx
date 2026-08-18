@@ -1,7 +1,7 @@
 export default function ApplicationLogo({ className, style }) {
     return (
         <img
-            src="/bagile-logo.png"
+            src="/images/logo-bagile.png"
             alt="B-AGILE Logo"
             className={className}
             style={style}
