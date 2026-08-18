@@ -39,7 +39,7 @@ export default function Login({ status, canResetPassword }) {
             <Head title="Connexion" />
 
             <div className="mb-6 text-center select-none">
-                <h2 className="text-xl font-extrabold text-white tracking-wide uppercase">Bienvenue sur B-AGILE</h2>
+                <h2 className="text-xl font-extrabold text-white tracking-wide uppercase">Bienvenue</h2>
                 <p className="text-xs text-purple-200/70 mt-1.5 font-medium">Connectez-vous pour accéder à votre espace</p>
             </div>
 
@@ -78,7 +78,7 @@ export default function Login({ status, canResetPassword }) {
 
             <div className="relative flex items-center justify-center my-6">
                 <div className="border-t border-purple-900/40 w-full"></div>
-                <span className="absolute bg-[#1a0e36] px-3 text-[9px] font-black text-purple-300/80 uppercase tracking-widest">
+                <span className="absolute bg-[#110925] px-3 text-[9px] font-black text-purple-300/80 uppercase tracking-widest">
                     ou saisir vos identifiants
                 </span>
             </div>
@@ -95,7 +95,7 @@ export default function Login({ status, canResetPassword }) {
                             type="text"
                             name="name"
                             value={data.name}
-                            className="block w-full pl-10 bg-purple-950/40 border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl focus:border-purple-400 focus:ring focus:ring-purple-500/10 transition duration-200 text-sm py-2"
+                            className="block w-full pl-10 !bg-purple-950/40 !border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring !focus:ring-purple-500/10 transition duration-200 text-sm py-2"
                             autoComplete="name"
                             isFocused={true}
                             onChange={(e) => setData('name', e.target.value)}
@@ -118,7 +118,7 @@ export default function Login({ status, canResetPassword }) {
                             type="email"
                             name="email"
                             value={data.email}
-                            className="block w-full pl-10 bg-purple-950/40 border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl focus:border-purple-400 focus:ring focus:ring-purple-500/10 transition duration-200 text-sm py-2"
+                            className="block w-full pl-10 !bg-purple-950/40 !border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring !focus:ring-purple-500/10 transition duration-200 text-sm py-2"
                             autoComplete="username"
                             onChange={(e) => setData('email', e.target.value)}
                             placeholder="votre@email.com"
@@ -140,7 +140,7 @@ export default function Login({ status, canResetPassword }) {
                             type={showPassword ? 'text' : 'password'}
                             name="password"
                             value={data.password}
-                            className="block w-full pl-10 pr-10 bg-purple-950/40 border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl focus:border-purple-400 focus:ring focus:ring-purple-500/10 transition duration-200 text-sm py-2"
+                            className="block w-full pl-10 pr-10 !bg-purple-950/40 !border-purple-800/40 text-white placeholder-purple-300/20 rounded-xl !focus:border-purple-400 !focus:ring !focus:ring-purple-500/10 transition duration-200 text-sm py-2"
                             autoComplete="current-password"
                             onChange={(e) => setData('password', e.target.value)}
                             placeholder="••••••••"
@@ -196,7 +196,7 @@ export default function Login({ status, canResetPassword }) {
 
             <div className="relative flex items-center justify-center my-6">
                 <div className="border-t border-purple-900/40 w-full"></div>
-                <span className="absolute bg-[#1a0e36] px-3 text-[9px] font-black text-purple-300/80 uppercase tracking-widest">ou</span>
+                <span className="absolute bg-[#110925] px-3 text-[9px] font-black text-purple-300/80 uppercase tracking-widest">ou</span>
             </div>
 
             {/* Google Authentication */}
