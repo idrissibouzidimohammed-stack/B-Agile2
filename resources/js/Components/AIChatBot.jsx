@@ -150,7 +150,7 @@ export default function AIChatBot() {
                             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-purple-600/40 rounded-full blur-2xl animate-[spin_10s_linear_infinite_reverse]" />
                             
                             <div className="relative z-10 flex items-center gap-4">
-                                <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-purple-600 flex items-center justify-center shadow-lg shadow-fuchsia-500/30">
+                                <div className="relative w-11 h-11 rounded-2xl bg-purple-600 flex items-center justify-center shadow-lg shadow-purple-600/30">
                                     <Bot size={22} className="text-white" />
                                     <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 border-2 border-[rgba(15,5,25,0.9)] rounded-full animate-pulse" />
                                 </div>
