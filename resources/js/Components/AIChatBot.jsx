@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, X, Send, Bot, User } from 'lucide-react';
+import { Sparkles, X, Send, Bot, User, MessageCircle, ChevronDown } from 'lucide-react';
 
 export default function AIChatBot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -94,24 +94,24 @@ export default function AIChatBot() {
                         {isOpen ? (
                             <motion.div
                                 key="close"
-                                initial={{ rotate: -180, opacity: 0, scale: 0.5 }}
+                                initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
                                 animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                                exit={{ rotate: 180, opacity: 0, scale: 0.5 }}
+                                exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                                 className="relative z-10 text-white"
                             >
-                                <X size={26} strokeWidth={2.5} />
+                                <ChevronDown size={30} strokeWidth={2.5} />
                             </motion.div>
                         ) : (
                             <motion.div
                                 key="open"
-                                initial={{ rotate: 180, opacity: 0, scale: 0.5 }}
+                                initial={{ rotate: 90, opacity: 0, scale: 0.5 }}
                                 animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                                exit={{ rotate: -180, opacity: 0, scale: 0.5 }}
+                                exit={{ rotate: -90, opacity: 0, scale: 0.5 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                                 className="relative z-10 text-white flex flex-col items-center justify-center"
                             >
-                                <Sparkles size={26} className="text-fuchsia-300 drop-shadow-[0_0_8px_rgba(232,121,249,0.8)]" />
+                                <MessageCircle size={28} className="text-white drop-shadow-md" />
                             </motion.div>
                         )}
                     </AnimatePresence>
