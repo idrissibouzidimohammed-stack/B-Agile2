@@ -1,5 +1,6 @@
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
+import AIChatBot from '@/Components/AIChatBot';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePage } from '@inertiajs/react';
 
@@ -28,6 +29,9 @@ export default function MainLayout({ children }) {
 
             {/* Footer */}
             <Footer />
+
+            {/* AI Chatbot */}
+            <AIChatBot />
         </div>
     );
 }
