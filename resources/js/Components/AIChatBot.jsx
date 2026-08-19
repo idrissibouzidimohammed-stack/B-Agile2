@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, X, Send, Bot, User, MessageCircle, ChevronDown } from 'lucide-react';
+import { Sparkles, X, Send, Bot, User, MessageSquareText, ChevronDown } from 'lucide-react';
 
 export default function AIChatBot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -111,7 +111,7 @@ export default function AIChatBot() {
                                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                                 className="relative z-10 text-white flex flex-col items-center justify-center"
                             >
-                                <MessageCircle size={28} className="text-white drop-shadow-md" />
+                                <MessageSquareText size={28} className="text-white drop-shadow-md" />
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -188,7 +188,7 @@ export default function AIChatBot() {
                                         : 'bg-indigo-900/50 border border-indigo-400/30'
                                     }`}>
                                         {msg.role === 'ai' ? (
-                                            <Sparkles size={14} className="text-fuchsia-400" />
+                                            <Bot size={14} className="text-fuchsia-400" />
                                         ) : (
                                             <User size={14} className="text-indigo-300" />
                                         )}
@@ -218,7 +218,7 @@ export default function AIChatBot() {
                                     className="flex gap-3 max-w-[85%] mr-auto"
                                 >
                                     <div className="w-8 h-8 rounded-full bg-purple-900/50 border border-fuchsia-500/30 flex items-center justify-center shrink-0 mt-1">
-                                        <Sparkles size={14} className="text-fuchsia-400 animate-pulse" />
+                                        <Bot size={14} className="text-fuchsia-400 animate-pulse" />
                                     </div>
                                     <div className="bg-white/5 border border-white/10 rounded-2xl rounded-tl-sm px-5 py-4 backdrop-blur-md flex items-center gap-1.5">
                                         <motion.div className="w-1.5 h-1.5 bg-fuchsia-400 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, ease: "easeInOut", delay: 0 }} />
